@@ -10,6 +10,7 @@ p{
 }
 img{
     display: block;
+    max-width: 100%;
 }
 
 .btn{
@@ -194,6 +195,11 @@ img{
     background-color: #fec63e;
     text-align: center;
 }
+
+.produtos-lista li img{
+    margin: 0 auto;
+}
+
 .produtos-icone{
     background: #000;
     padding: 20px;
@@ -295,7 +301,7 @@ img{
     display: block;
     width: 60px;
     height: 3px;
-    background: #fff;
+    background: #000;
     margin: 6px auto;
 }
 
@@ -347,7 +353,9 @@ img{
     line-height: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
+.contato-mapa{
+    margin-bottom: 60px;
+}
 .footer-rede ul li{
     display: inline-block;
     margin-right: 10px;
