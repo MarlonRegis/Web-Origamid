@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/contato.css">
     <link rel="stylesheet" href="./css/responsivo.css">
+    <script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body>
@@ -31,25 +32,31 @@
 
     <section class="introducao-interna interna-contato">
         <div class="container">
-            <h1>Contato</h1>
-            <p>
+            <h1 data-anime="400" class="fadeInDown">Contato</h1>
+            <p data-anime="800" class="fadeInDown">
                 Tire suas dúvidas com a gente
             </p>
         </div>
     </section>
 
 
-    <section class="contato container">
-        <form id="form-contato" action="" class="grid-8">
+    <section class="contato container" data-anime="1200">
+        <form id="form-contato" method="POST" action="./enviar.php" action="" class="grid-8 formphp">
             <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome">
+            <input type="text" name="nome" id="nome" required>
             <label for="mail">E-mail</label>
-            <input type="mail" name="email" id="email">
+            <input type="email" name="email" id="email" required>
             <label for="telefone">Telefone</label>
+
+            <label for="" class="nao-aparece">Se você não é um robo, deixe em branco</label>
+            <input type="text" class="nao-aparece" name="leaveblank" >
+            <label for="" class="nao-aparece"> Se você não é um robo, não mude esse campo</label>
+            <input type="text" name="leaveblank" class="nao-aparece" >
+
             <input type="tel" name="telefone" id="telefone">
-            <label for="espec">Especificações</label>
-            <textarea name="espec" id="espec" cols="30" rows="10"></textarea>
-            <button class="btn btn-preto">Enviar</button>
+            <label for="espec">Mensagem</label>
+            <textarea name="mensagem" id="mensagem" cols="30" rows="10" required></textarea>
+            <button class="btn btn-preto" id="enviar" name="enviar" type="submit">Enviar</button>
         </form>
         <div class="contato-dados grid-8">
             <h3>Dados</h3>
@@ -124,6 +131,10 @@
             </div>
         </div>
     </footer>
+
+    <script src="./js/simple-anime.js"></script>
+    <script src="./js/simple-form.js"></script>
+    <script src="./js/scripts.js"></script>
 </body>
 
 </html>

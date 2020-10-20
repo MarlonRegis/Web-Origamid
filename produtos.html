@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/produtos.css">
     <link rel="stylesheet" href="./css/responsivo.css">
+    <script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body>
@@ -31,14 +32,14 @@
 
     <section class="introducao-interna interna-produtos">
         <div class="container">
-            <h1>Produtos</h1>
-            <p>
+            <h1 data-anime="400" class="fadeInDown"> Produtos</h1>
+            <p data-anime="800" class="fadeInDown">
                 Conheça todos os nossos produtos
             </p>
         </div>
     </section>
 
-    <section class="container produto-item">
+    <section class="container produto-item fadeInDown" data-anime="1200" >
         <div class="grid-11">
             <img src="./img/produtos/bikcraft-passeio-1.jpg" alt="Bikcraft passeio">
             <h2>Passeio</h2>
@@ -109,16 +110,22 @@
     <section class="orcamento">
         <div class="container">
             <h2 class="subtitulo">Orçamento</h2>
-            <form id="form-orcamento" action="" class="grid-8">
+            <form id="form-orcamento" method="POST" action="./enviar.php" action="" class="grid-8 formphp">
                 <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome">
+                <input type="text" name="nome" id="nome" required>
                 <label for="mail">E-mail</label>
-                <input type="mail" name="email" id="email">
+                <input type="email" name="email" id="email" required>
                 <label for="telefone">Telefone</label>
+    
+                <label for="" class="nao-aparece">Se você não é um robo, deixe em branco</label>
+                <input type="text" class="nao-aparece" name="leaveblank" >
+                <label for="" class="nao-aparece"> Se você não é um robo, não mude esse campo</label>
+                <input type="text" name="leaveblank" class="nao-aparece" >
+    
                 <input type="tel" name="telefone" id="telefone">
-                <label for="espec">Especificações</label>
-                <textarea name="espec" id="espec" cols="30" rows="10"></textarea>
-                <button class="btn">Enviar</button>
+                <label for="espec">Mensagem</label>
+                <textarea name="mensagem" id="mensagem" cols="30" rows="10" required></textarea>
+                <button class="btn" id="enviar" name="enviar" type="submit">Enviar</button>
             </form>
             <div class="orcamento-dados grid-8">
                 <h3>Dados</h3>
@@ -184,6 +191,10 @@
                     </div>
                 </div>
     </footer>
+
+    <script src="./js/simple-anime.js"></script>
+    <script src="./js/simple-form.js"></script>
+    <script src="./js/scripts.js"></script>
 </body>
 
 </html>
